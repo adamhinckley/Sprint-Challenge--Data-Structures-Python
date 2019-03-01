@@ -18,7 +18,7 @@ duplicates = []
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# first attempt, takes 2-3 secones
+# first attempt, takes 2-3 seconds
 # for name in names_1:
 #     if name in names_2:
 #         duplicates.append(name)
@@ -32,7 +32,9 @@ b = set(names_2)
 
 duplicates.append(str(a & b))
 
-
+# for some reason I have to get the duplicates printed like this when using set()
+print(len(a & b), 'duplicates')
 end_time = time.time()
-print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+# this says there is only one duplicate with my fast solution
+print(f"{', '.join(duplicates)}\n\n")
 print(f"runtime: {end_time - start_time} seconds")
