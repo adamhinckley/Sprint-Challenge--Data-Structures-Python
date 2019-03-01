@@ -5,7 +5,20 @@ class BinarySearchTree:
         self.right = None
 
     def depth_first_for_each(self, cb):
-        # init
+        # assign variables for parent node, left node, right node
+        left_node = self.left
+        right_node = self.right
+        parent_node = self
+
+        # pass parent node value to cb
+        cb(parent_node.value)
+
+        # if left node has items in it, pass in cb
+        if left_node is not None:
+            left_node.depth_first_for_each(cb)
+        # if right node has items in it, pass in cb
+        if right_node is not None:
+            right_node.depth_first_for_each(cb)
 
     def breadth_first_for_each(self, cb):
         pass
